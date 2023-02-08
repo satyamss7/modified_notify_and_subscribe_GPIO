@@ -28,7 +28,7 @@ target_link_libraries(subscribe-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_L
 #target_link_libraries(notify-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_LIBRARY} -lCppLinuxSerial -pthread)
 
 
-add_executable(notify-sample notify-sample.cpp serial.cpp led_conf.cpp ${EXAMPLE_CONFIG_FILES})
+add_executable(notify-sample notify-sample.cpp serial.cpp ${EXAMPLE_CONFIG_FILES})
 target_link_libraries(notify-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_LIBRARY} -lCppLinuxSerial -pthread)
 
 #add_executable(cli cli.cpp ${EXAMPLE_CONFIG_FILES})
