@@ -26,8 +26,8 @@
 	int value = 0;
 	int value1 = 0;
 	
-int set_gpio(char pin, char led_stat);
-int gpio_init();
+//int set_gpio(char pin, char led_stat);
+//int gpio_init();
 
 
 static int
