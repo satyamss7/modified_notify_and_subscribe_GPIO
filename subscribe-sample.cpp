@@ -28,7 +28,7 @@ public:
     }
 
     bool init() {
-    	 
+    	 gpio_init();
         if (!app_->init()) {
             std::cerr << "Couldn't initialize application" << std::endl;
             return false;
@@ -234,7 +234,6 @@ int main(int argc, char **argv) {
     std::string udp_enable("--udp");
 
     int i = 1;
-	gpio_init();
     while (i < argc) {
         if (tcp_enable == argv[i]) {
             use_tcp = true;
