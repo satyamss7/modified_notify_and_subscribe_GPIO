@@ -21,7 +21,7 @@ target_link_libraries(request-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_LIB
 add_executable(response-sample response-sample.cpp ${EXAMPLE_CONFIG_FILES})
 target_link_libraries(response-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_LIBRARY})
 
-add_executable(subscribe-sample subscribe-sample.cpp led_conf.h ${EXAMPLE_CONFIG_FILES})
+add_executable(subscribe-sample subscribe-sample.cpp led_conf.cpp ${EXAMPLE_CONFIG_FILES})
 target_link_libraries(subscribe-sample ${VSOMEIP_NAME} ${Boost_LIBRARIES} ${DL_LIBRARY})
 
 #add_executable(notify-sample notify-sample.cpp hello.cpp serial.cpp ${EXAMPLE_CONFIG_FILES})
