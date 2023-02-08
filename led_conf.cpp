@@ -45,7 +45,10 @@ GPIOExport(int pin)
 	}
 
 	bytes_written = snprintf(buffer, BUFFER_MAX, "%d", pin);
-	write(fd, buffer, bytes_written);
+	int ret=0;
+	ret = write(fd, buffer, bytes_written);
+	if(ret>0)
+		std::cout<<"gpio_write_successfull"<<std::endl;
 	close(fd);
 	return(0);
 }
