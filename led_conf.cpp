@@ -166,7 +166,7 @@ int gpio_init()
 		std::cout<<"gpio_init_error3"<<std::endl;
 
 	//	return(2);
-	
+	sleep(1);
 	//if (-1 == GPIODirection(POUT_1, OUT) || -1 == GPIODirection(PIN_1, IN))
 	//	std::cout<<"gpio_init_error4_test"<<std::endl;
 	if (-1 == GPIODirection(POUT_1, OUT))
