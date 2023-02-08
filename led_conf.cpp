@@ -172,6 +172,15 @@ int gpio_init()
 	if (-1 == GPIODirection(POUT_1, OUT))
 		std::cout<<"gpio_init_error4_test"<<std::endl;
 	
+	int i=0;
+	for(i=0;i<10;i++){
+		GPIOWrite(POUT, 1);
+		GPIOWrite(POUT_1, 1);
+		sleep(1);
+		GPIOWrite(POUT, 0);
+		GPIOWrite(POUT_1, 0);
+		sleep(1);
+	}
 	
 		//return(2);
 	GPIOWrite(POUT, 1);
