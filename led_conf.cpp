@@ -174,6 +174,7 @@ int gpio_init()
 	GPIOWrite(POUT_1, 1);
 	std::cout<<"GPIO_INIT"<< std::endl;
 	//sleep(2);
+	return 0;
 }
 
 int set_gpio(char pin, char led_stat)
