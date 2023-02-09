@@ -160,7 +160,7 @@ public:
 	
 
 	//std::cout<<status_distance<<std::endl;
-	if((status_distance > 1.0 && unlock_flag == 1)|| (!(((int)temp[0]>=48 && (int)temp[0]<=57)||(temp[0] == '-')))){
+	if((status_distance > 1.0 && unlock_flag == 1 && lock_flag == 0)|| (!(((int)temp[0]>=48 && (int)temp[0]<=57)||(temp[0] == '-')))){
 		lock_flag = 1;
 		unlock_flag = 0;
 		std::cout<<std::endl<<"Locked"<<std::endl;
@@ -168,7 +168,7 @@ public:
 	 	set_gpio(2,0);
 	 	
 	}
-	else if(status_distance <= 1.0 && lock_flag ==1 ){
+	else if(status_distance <= 1.0 && lock_flag ==1 && unlock_flag ==0){
 		unlock_flag = 1;
 		lock_flag = 0;
 		std::cout<<std::endl<<"Unlocked"<<std::endl;
