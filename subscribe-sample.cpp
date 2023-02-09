@@ -101,6 +101,7 @@ public:
 
 	int lock_flag = 1;
 	int unlock_flag = 1;
+	double status_distance=0.0;
 
     void on_message(const std::shared_ptr<vsomeip::message> &_response) {
 	    std::cout<<"Inside ON_MESSAGE "<<std::endl;
@@ -155,14 +156,14 @@ public:
 		temp[temp_count] = rcv_data[temp_count];
 	}*/
 
-	double status_distance = fabs(atof(temp));
-	//std::cout<<status_distance<<std::endl;
-
+	status_distance = fabs(atof(temp));
+	std::cout<<"After Conversion = "<<status_distance<<std::endl;
+	
 	 std::cout<<"Before LOCK_FLAG = "<<lock_flag<<std::endl;
 	    std::cout<<"Before UNLOCK_FLAG = "<<unlock_flag<<std::endl;
 
 	//std::cout<<status_distance<<std::endl;
-	if((status_distance > 1.0 && unlock_flag == 1) || (!(((int)temp[0]>=48 && (int)temp[0]<=57)||(temp[0] == '-')))){
+	if(status_distance > 1.0 && unlock_flag == 1){
 		lock_flag = 1;
 		unlock_flag = 0;
 		std::cout<<std::endl<<"Locked"<<std::endl;
