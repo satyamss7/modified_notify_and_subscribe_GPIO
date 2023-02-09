@@ -104,7 +104,6 @@ public:
 	double status_distance=0.0;
 
     void on_message(const std::shared_ptr<vsomeip::message> &_response) {
-	    std::cout<<"Inside ON_MESSAGE "<<std::endl;
         std::stringstream its_message;
 	std::shared_ptr<vsomeip::payload> its_payload =
                 _response->get_payload();
@@ -157,10 +156,7 @@ public:
 	}*/
 
 	status_distance = fabs(atof(temp));
-	std::cout<<"After Conversion = "<<status_distance<<std::endl;
-	
-	 std::cout<<"Before LOCK_FLAG = "<<lock_flag<<std::endl;
-	    std::cout<<"Before UNLOCK_FLAG = "<<unlock_flag<<std::endl;
+	//std::cout<<"After Conversion = "<<status_distance<<std::endl;
 
 	//std::cout<<status_distance<<std::endl;
 	if(status_distance > 1.0 && unlock_flag == 1){
@@ -171,7 +167,7 @@ public:
 	 	set_gpio(2,0);
 	 	
 	}
-	else if(status_distance <= 1.0 && lock_flag ==1){
+	else if(status_distance <= 1.0 && status_distance!=0 && lock_flag ==1){
 		unlock_flag = 1;
 		lock_flag = 0;
 		std::cout<<std::endl<<"Unlocked"<<std::endl;
@@ -179,8 +175,6 @@ public:
 	 	set_gpio(2,1);
 		
 	}
-	    std::cout<<"LOCK_FLAG = "<<lock_flag<<std::endl;
-	    std::cout<<"UNLOCK_FLAG = "<<unlock_flag<<std::endl;
 
 	//Lock/unlock code ends here
 	
