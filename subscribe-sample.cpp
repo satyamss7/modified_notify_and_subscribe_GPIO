@@ -99,8 +99,8 @@ public:
 	//int lock_print = 0;
 	//int unlock_print = 0;
 
-	static int lock_flag = 1;
-	static int unlock_flag = 1;
+	int lock_flag = 1;
+	int unlock_flag = 1;
 
     void on_message(const std::shared_ptr<vsomeip::message> &_response) {
         std::stringstream its_message;
