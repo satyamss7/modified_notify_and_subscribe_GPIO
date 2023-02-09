@@ -101,9 +101,11 @@ public:
 
 	int lock_flag = 1;
 	int unlock_flag = 1;
+	int count =0;
 
     void on_message(const std::shared_ptr<vsomeip::message> &_response) {
-	    std::cout<<"Inside ON_MESSAGE"<<std::endl;
+	    count++;
+	    std::cout<<"Inside ON_MESSAGE "<<count<<std::endl;
         std::stringstream its_message;
 	std::shared_ptr<vsomeip::payload> its_payload =
                 _response->get_payload();
