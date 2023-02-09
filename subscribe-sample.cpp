@@ -101,7 +101,7 @@ public:
 
 	int lock_flag = 1;
 	int unlock_flag = 1;
-	double status_distance=0.0;
+	double status_distance=0.0;                                           //declared the status_distance variable as Global instead of Local
 
     void on_message(const std::shared_ptr<vsomeip::message> &_response) {
         std::stringstream its_message;
@@ -167,7 +167,7 @@ public:
 	 	set_gpio(2,0);
 	 	
 	}
-	else if(status_distance <= 1.0 && status_distance!=0 && lock_flag ==1){
+	else if(status_distance <= 1.0 && status_distance!=0 && lock_flag ==1){                               //added one condition to check if the distance is 0
 		unlock_flag = 1;
 		lock_flag = 0;
 		std::cout<<std::endl<<"Unlocked"<<std::endl;
