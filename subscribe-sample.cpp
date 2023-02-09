@@ -165,16 +165,16 @@ public:
 		lock_flag = 1;
 		unlock_flag = 0;
 		std::cout<<std::endl<<"Locked"<<std::endl;
-		//set_gpio(1,1);
-	 	//set_gpio(2,0);
+		set_gpio(1,1);
+	 	set_gpio(2,0);
 	 	
 	}
-	else if((status_distance <= 1.0 && lock_flag ==1) || (!(((int)temp[0]>=48 && (int)temp[0]<=57)||(temp[0] == '-')))){
+	else if(status_distance <= 1.0 && lock_flag ==1){
 		unlock_flag = 1;
 		lock_flag = 0;
 		std::cout<<std::endl<<"Unlocked"<<std::endl;
-		//set_gpio(1,0);
-	 	//set_gpio(2,1);
+		set_gpio(1,0);
+	 	set_gpio(2,1);
 		
 	}
 	    std::cout<<"LOCK_FLAG = "<<lock_flag<<std::endl;
