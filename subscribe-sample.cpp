@@ -103,6 +103,7 @@ public:
 	int unlock_flag = 1;
 
     void on_message(const std::shared_ptr<vsomeip::message> &_response) {
+	    std::cout<<"Inside ON_MESSAGE"<<std::endl;
         std::stringstream its_message;
 	std::shared_ptr<vsomeip::payload> its_payload =
                 _response->get_payload();
